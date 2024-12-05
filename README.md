@@ -5,7 +5,7 @@
 **This is not an officially supported Google product**
 
 This repo contains the code to deploy the Google Cloud configuration for
-Isolator. Isolator is a solution/blueprint to provide a secure collaboration 
+Isolator. Isolator is a solution/blueprint to provide a secure collaboration
 environment inside of Google Cloud. This code, along with
 the [designs](/design-docs/detailed-design.md) for Isolator
 provide the security controls and monitoring for teams to create a secure
@@ -35,8 +35,8 @@ for more information.
 The Isolator designs and corresponding code and configurations **do not**
 guarantee a specific level of compliance, nor is that the intent. Given
 Isolator's scope is Google Cloud security controls it is impossible to provide
-as there are layers of the technology stack outside of Isolator which will come 
-into play (e.g. IdP configurations, Application Security, Endpoint Security, 
+as there are layers of the technology stack outside of Isolator which will come
+into play (e.g. IdP configurations, Application Security, Endpoint Security,
 etc.).
 
 Isolator is intended to provide a hardened baseline. Similar to the adage "The
@@ -107,3 +107,10 @@ Apache 2.0; see [`LICENSE`](LICENSE) for details.
 This project is not an official Google project. It is not supported by
 Google and Google specifically disclaims all warranties as to its quality,
 merchantability, or fitness for a particular purpose.
+
+This repository and its contents are not an officially supported Google product.
+
+This design utilizes Google Cloud services. Use of GCP is subject to the Google
+Cloud Terms of Service (https://cloud.google.com/terms/). Please review these
+terms carefully, as they govern your use of any GCP services implemented based
+on this design.
