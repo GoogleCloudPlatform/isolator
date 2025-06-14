@@ -24,16 +24,16 @@
 
 # 04 Pipeline SA IAM Assignment
 
-#resource "google_billing_account_iam_member" "isolator_04_security_projects_sa_billing_user" {
-#  billing_account_id = var.billing_account_id
-#  member             = "serviceAccount:${var.sa_04_security_projects}"
-#  role               = "roles/billing.user"
-#}
+resource "google_billing_account_iam_member" "isolator_04_security_projects_sa_billing_user" {
+  billing_account_id = var.billing_account_id
+  member             = "serviceAccount:${var.sa_04_security_projects}"
+  role               = "roles/billing.user"
+}
 
 # 06 Pipeline SA IAM Assignment
 
-#resource "google_billing_account_ia m_member" "isolator_04_security_projects_sa_billing_user" {
-#  billing_account_id = var.billing_account_id
-#  member             = "serviceAccount:${var.sa_06_data_projects}"
-#  role               = "roles/billing.user"
-#}
+resource "google_billing_account_ia m_member" "isolator_04_security_projects_sa_billing_user" {
+  billing_account_id = var.billing_account_id
+  member             = "serviceAccount:${var.sa_06_data_projects}"
+  role               = "roles/billing.user"
+}

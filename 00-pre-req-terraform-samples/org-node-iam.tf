@@ -21,11 +21,11 @@
 # authoritatively
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_organization_iam
 
-#resource "google_organization_iam_member" "org_policy_admin" {
-#  member = "serviceAccount:${var.sa_02_org_policies}"
-#  org_id = var.organization_id
-#  role   = "roles/orgpolicy.policyAdmin"
-#}
+resource "google_organization_iam_member" "org_policy_admin" {
+  member = "serviceAccount:${var.sa_02_org_policies}"
+  org_id = var.organization_id
+  role   = "roles/orgpolicy.policyAdmin"
+}
 
 /******************************************
   For HFW Rules Mgmt At Folder Level

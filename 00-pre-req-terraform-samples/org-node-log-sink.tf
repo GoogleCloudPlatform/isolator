@@ -23,14 +23,14 @@
 locals {
   # This is the project ID for the Isolator security log project
   # This project is created as part of the 05 Security Projects pipeline
-  isolator_logs_and_monitoring_project_id = "tst24-iso-sec-log-7unz"
+  isolator_logs_and_monitoring_project_id = ""
 
   # This access policy will need to be created by the team which manages
   # Access Context Manager (VPC Service Controls) permissions from the Org Node
   # Per the Isolator designs and implementation guide this is the policy that
   # will be scoped to the Isolator folder.
 
-  isolator_access_policy = "57022806392"
+  isolator_access_policy = ""
 
   # This is the names of the sink being configured
   # The names can stay the same as provided here or may be updated if necessary
@@ -38,7 +38,7 @@ locals {
 
   # This may be found in the Isolator logs and monitoring project
   # It may be viewed as an output from the 05 Security Resources pipeline
-  isolator_log_bucket_name = "iso-sec-logs-dx6u"
+  isolator_log_bucket_name = ""
 
   # This filter scopes the logs collected from the Org Node to only include
   # Access Context Manager logs for the scoped Isolator Access Policy and the
