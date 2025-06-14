@@ -18,7 +18,7 @@
  *****************************************/
 # Folder Creation
 resource "google_folder" "isolator_under_org_node" {
-  display_name = "Isolator-Oct2024"
+  display_name = "Isolator"
   parent       = "organizations/${var.organization_id}"
 }
 
