@@ -46,3 +46,8 @@ variable "service_account_expiry" {
   description = "Allowed values for GCP Service Account key expiration"
   type        = list(string)
 }
+
+variable "custom_constraints_to_apply" {
+  description = "A list of the custom constraints to apply to the Isolator Folder. Do not include 'custom.' in the names of these."
+  type = list(string)
+}

@@ -38,3 +38,39 @@ domain_contacts = [
 service_account_expiry = [
   "720h",
 ]
+
+# In general this list should not change
+custom_constraints_to_apply = [
+  # Restrict Cloud Build Pools to be Private
+  "restrictCloudBuildPublicEgress",
+  # CIS Benchmark 6.4.1 - Disable Metadata API
+  "gkeDisableMetadataApi",
+  # CIS Benchmark 6.4.2 - Require GKE Metadata Server
+  "gkeRequireMetadataServer",
+  # CIS Benchmark 6.5.1 - Require Container Optimized OS
+  "gkeRequireCos",
+  # CIS Benchmark 6.5.2 - Require Auto Repair
+  "gkeRequireAutoRepair",
+  # CIS Benchmark 6.5.3 - Require Auto Upgrade
+  "gkeRequireAutoUpgrade",
+  # CIS Benchmark 6.5.4 - Restrict use of Regular Release Channel
+  "gkeRestrictRegularReleaseChannel",
+  # CIS Benchmark 6.5.5 - Require Shielded Nodes
+  "gkeRequireShieldedNodes",
+  # CIS Benchmark 6.5.6 - Require Integrity Monitoring
+  "gkeRequireIntegrityMonitoring",
+  # CIS Benchmark 6.5.7 - Require Secure Boot
+  "gkeRequireSecureBoot",
+  # CIS Benchmark 6.6.2 - Require Cluster Native VPC
+  "gkeRequireClusterNativeVpc",
+  # CIS Benchmark 6.6.3 - Require Master Authorized Networks
+  "gkeRequireMasterAuthNetworks",
+  # CIS Benchmark 6.7.1 - Require Logging & Monitoring
+  "gkeRequireLoggingMonitoring",
+  # CIS Benchmark 6.8.2 - Restrict Client Certificate Authentication
+  "gkeRestrictClientCertAuth",
+  # CIS Benchmark 6.8.4 - Restrict Legacy ABAC
+  "gkeRestrictLegacyAbac",
+  # CIS Benchmark 6.10.2 - Restrict Alpha Clusters
+  "gkeRestrictAlphaClusters",
+]

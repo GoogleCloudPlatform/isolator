@@ -27,8 +27,3 @@ variable "constraint_list" {
   description = "List of constraints to apply. Must all be Boolean and must apply same value of true or false"
   type        = list(string)
 }
-
-variable "constraint_value" {
-  description = "Value of constrain: TRUE or FALSE"
-  type        = string
-}

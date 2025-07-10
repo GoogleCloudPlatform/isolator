@@ -17,20 +17,15 @@
 /******************************************
   Org Policy
  *****************************************/
-
-locals {
-  constraints_map = toset(var.constraint_list)
-}
-
 resource "google_org_policy_policy" "folder_policy" {
-  for_each = local.constraints_map
+  for_each = toset(var.constraint_list)
   name     = "folders/${var.folder_id}/policies/${each.value}"
   parent   = "folders/${var.folder_id}"
 
   spec {
     inherit_from_parent = false
     rules {
-      enforce = var.constraint_value
+      enforce = "TRUE"
     }
   }
 }
