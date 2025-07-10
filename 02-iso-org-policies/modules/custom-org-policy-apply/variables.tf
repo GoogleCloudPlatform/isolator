@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-/******************************************
-  GKE Custom Org Policies - Applied
- *****************************************/
-module "folder_org_policies_gke_custom_enforced" {
-  source          = "./modules/org-policy-custom-gke"
-  folder_id       = var.isolator_folder_id
-  organization_id = var.organization_id
+# The ID of the target resource (folder or project) where the policies will be applied.
+variable "folder_id" {
+  description = "The numeric ID of the folder or the string ID of the project to apply the policy to."
+  type        = string
+}
+
+# A list of organization policy constraints to apply and enforce on the target.
+# These must be the full constraint names (e.g., 'iam.allowedPolicyMemberDomains' or 'custom.gkeRequireCos').
+variable "constraints_to_apply" {
+  description = "A list of the full names of the constraints to enforce on the target resource."
+  type        = list(string)
 }

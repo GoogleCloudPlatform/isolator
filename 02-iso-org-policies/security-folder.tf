@@ -16,7 +16,9 @@
 #/******************************************
 #  Security Folder
 # *****************************************/
+####################################################################
 # Compute Engine
+####################################################################
 resource "google_org_policy_policy" "isolator_security_folder_restrict_vpc_peering" {
   name   = "folders/${local.security_folder_id}/policies/compute.restrictVpcPeering"
   parent = "folders/${local.security_folder_id}"
@@ -37,7 +39,6 @@ resource "google_org_policy_policy" "isolator_security_folder_restrict_vpc_peeri
   }
 }
 
-# Compute Engine
 # https://cloud.google.com/vpc/docs/private-service-connect-security#org-policies
 resource "google_org_policy_policy" "isolator_security_folder_restrict_psc_producer" {
   name   = "folders/${local.security_folder_id}/policies/compute.restrictPrivateServiceConnectProducer"
@@ -57,7 +58,6 @@ resource "google_org_policy_policy" "isolator_security_folder_restrict_psc_produ
   }
 }
 
-# Compute Engine
 # https://cloud.google.com/vpc/docs/private-service-connect-security#org-policies
 resource "google_org_policy_policy" "isolator_security_folder_restrict_psc_consumer" {
   name   = "folders/${local.security_folder_id}/policies/compute.restrictPrivateServiceConnectConsumer"
@@ -75,7 +75,6 @@ resource "google_org_policy_policy" "isolator_security_folder_restrict_psc_consu
   }
 }
 
-# Compute Engine
 resource "google_org_policy_policy" "isolator_security_folder_gce_restrict_vpc_host_project" {
   name   = "folders/${local.security_folder_id}/policies/compute.restrictSharedVpcHostProjects"
   parent = "folders/${local.security_folder_id}"
@@ -92,7 +91,6 @@ resource "google_org_policy_policy" "isolator_security_folder_gce_restrict_vpc_h
   }
 }
 
-# Compute Engine
 resource "google_org_policy_policy" "isolator_security_folder_gce_restrict_storage_use" {
   name   = "folders/${local.security_folder_id}/policies/compute.storageResourceUseRestrictions"
   parent = "folders/${local.security_folder_id}"
@@ -109,8 +107,9 @@ resource "google_org_policy_policy" "isolator_security_folder_gce_restrict_stora
   }
 }
 
-
+####################################################################
 # Vertex AI Workbench
+####################################################################
 resource "google_org_policy_policy" "isolator_security_folder_vertex_workbench_restrict_vpc_networks" {
   name   = "folders/${local.security_folder_id}/policies/ainotebooks.restrictVpcNetworks"
   parent = "folders/${local.security_folder_id}"
@@ -139,119 +138,6 @@ resource "google_org_policy_policy" "isolator_security_folder_cloud_build_allowe
       values {
         allowed_values = [
           "under:folders/${local.security_folder_id}",
-        ]
-      }
-    }
-  }
-}
-
-#/******************************************
-#  Data Folder
-# *****************************************/
-# Compute Engine
-resource "google_org_policy_policy" "isolator_data_folder_restrict_vpc_peering" {
-  name   = "folders/${local.data_folder_id}/policies/compute.restrictVpcPeering"
-  parent = "folders/${local.data_folder_id}"
-
-  spec {
-    inherit_from_parent = false
-    rules {
-      values {
-        allowed_values = [
-          "under:folders/${local.data_folder_id}",
-          # https://autonomousthingz-life.medium.com/google-cloud-organisation-policies-get-the-restrict-vpc-peering-usage-organisation-policy-d87dce84a5e7
-          "under:folders/832634261155",
-          "under:folders/1087601843002",
-          "under:folders/391150242170",
-        ]
-      }
-    }
-  }
-}
-
-# Compute Engine
-# https://cloud.google.com/vpc/docs/private-service-connect-security#org-policies
-resource "google_org_policy_policy" "isolator_data_folder_restrict_psc_producer" {
-  name   = "folders/${local.data_folder_id}/policies/compute.restrictPrivateServiceConnectProducer"
-  parent = "folders/${local.data_folder_id}"
-
-  spec {
-    inherit_from_parent = false
-    rules {
-      values {
-        allowed_values = [
-          "under:folders/${local.data_folder_id}",
-          # https://cloud.google.com/vpc/docs/manage-security-private-service-connect-consumers
-          "under:organizations/433637338589",
-        ]
-      }
-    }
-  }
-}
-
-# Compute Engine
-# https://cloud.google.com/vpc/docs/private-service-connect-security#org-policies
-resource "google_org_policy_policy" "isolator_data_folder_restrict_psc_consumer" {
-  name   = "folders/${local.data_folder_id}/policies/compute.restrictPrivateServiceConnectConsumer"
-  parent = "folders/${local.data_folder_id}"
-
-  spec {
-    inherit_from_parent = false
-    rules {
-      values {
-        allowed_values = [
-          "under:folders/${local.data_folder_id}",
-        ]
-      }
-    }
-  }
-}
-
-# Compute Engine
-resource "google_org_policy_policy" "isolator_data_folder_gce_restrict_vpc_host_project" {
-  name   = "folders/${local.data_folder_id}/policies/compute.restrictSharedVpcHostProjects"
-  parent = "folders/${local.data_folder_id}"
-
-  spec {
-    inherit_from_parent = false
-    rules {
-      values {
-        allowed_values = [
-          "under:folders/${local.data_folder_id}",
-        ]
-      }
-    }
-  }
-}
-
-# Compute Engine
-resource "google_org_policy_policy" "isolator_data_folder_gce_restrict_storage_use" {
-  name   = "folders/${local.data_folder_id}/policies/compute.storageResourceUseRestrictions"
-  parent = "folders/${local.data_folder_id}"
-
-  spec {
-    inherit_from_parent = false
-    rules {
-      values {
-        allowed_values = [
-          "under:folders/${local.data_folder_id}",
-        ]
-      }
-    }
-  }
-}
-
-# Vertex AI Workbench
-resource "google_org_policy_policy" "isolator_data_folder_vertex_workbench_restrict_vpc_networks" {
-  name   = "folders/${local.data_folder_id}/policies/ainotebooks.restrictVpcNetworks"
-  parent = "folders/${local.data_folder_id}"
-
-  spec {
-    inherit_from_parent = false
-    rules {
-      values {
-        allowed_values = [
-          "under:folders/${local.data_folder_id}",
         ]
       }
     }

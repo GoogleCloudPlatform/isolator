@@ -27,13 +27,13 @@ terraform {
       source = "hashicorp/google"
       # Update below if you need a feature in a newer version
       # and need to make sure it stays at that newer provider version
-      version = ">=4.0.0"
+      version = ">=6.0.0"
     }
     google-beta = {
       source = "hashicorp/google-beta"
       # Update below if you need a feature in a newer version
       # and need to make sure it stays at that newer provider version
-      version = ">=4.0.0"
+      version = ">=6.0.0"
     }
   }
 }
