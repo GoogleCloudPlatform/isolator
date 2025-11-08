@@ -44,3 +44,7 @@ Isolator Reviewers
 * [Wilson Liu](https://github.com/wliu415)
 * [Ryan Zeng](https://github.com/athlony2k)
 * [Bini Ayalew ](https://github.com/Biniget)
+
+Inspirational Security Leader
+
+* [Taylor Lehmann](https://www.linkedin.com/in/bostoncyberguy)
